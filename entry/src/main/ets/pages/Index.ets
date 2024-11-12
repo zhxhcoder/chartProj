@@ -9,7 +9,7 @@ struct Index {
     Column() {
 
       // lineChart 测试
-      FinancingLineChart({
+      SimpleLineChart({
         canvasWidth: 100,
         canvasHeight: 100
       })
