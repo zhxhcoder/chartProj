@@ -7,7 +7,7 @@ export struct SimpleLineChart {
       "-9.45", "-17.63", "-16.52", "-15.60", "-19.75", "-21.82", "-22.76", "-23.31", "-12.42", "-1.26", "7.63", "8.72",
       "9.02"]
   @State pointList: number[][] = []
-  @State fillList: number[][] = []
+  @State angleList: number[][] = []
   @State canvasWidth: number = 100
   @State canvasHeight: number = 100
 
@@ -41,15 +41,17 @@ export struct SimpleLineChart {
     xGap = this.canvasWidth / (this.dataList.length - 1)
     yGap = this.canvasHeight / (dataMax - dataMin)
 
-    let list: number[][] = []
+    let tempPoints: number[][] = []
     this.dataList.forEach((item, index) => {
-      list.push([xStart + index * xGap, yStart - (Number(item) - dataMin) * yGap])
+      tempPoints.push([xStart + index * xGap, yStart - (Number(item) - dataMin) * yGap])
     })
-    this.pointList = list
-    let newArr: number[][] = JSON.parse(JSON.stringify(list))
-    newArr.push([this.canvasWidth, this.canvasHeight])
-    this.fillList = newArr
-    console.log('newArr', JSON.stringify(newArr))
+    this.pointList = tempPoints
+
+    let tempAngles: number[][] = JSON.parse(JSON.stringify(tempPoints))
+    tempAngles.push([0, this.canvasHeight])
+    tempAngles.push([this.canvasWidth, this.canvasHeight])
+    this.angleList = tempAngles
+    console.log('newArr', JSON.stringify(tempAngles))
   }
 
   build() {
@@ -63,7 +65,7 @@ export struct SimpleLineChart {
         .zIndex(1)
 
       Polygon({ width: this.canvasWidth, height: this.canvasHeight })
-        .points(this.fillList)
+        .points(this.angleList)
         .fill(Color.Red)
         .fillOpacity(0.06)
     }
