@@ -21,7 +21,6 @@ export struct SimpleLineChart {
     }
 
     let xStart = 0
-    let yStart = this.canvasHeight
 
     let dataMax = Number.MIN_VALUE
     let dataMin = Number.MAX_VALUE
@@ -43,7 +42,7 @@ export struct SimpleLineChart {
 
     let tempPoints: number[][] = []
     this.chartDataList.forEach((item, index) => {
-      tempPoints.push([xStart + index * xGap, yStart - (Number(item) - dataMin) * yGap])
+      tempPoints.push([xStart + index * xGap, this.canvasHeight - (Number(item) - dataMin) * yGap])
     })
     this.pointList = tempPoints
 
