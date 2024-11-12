@@ -6,6 +6,8 @@ export struct SimpleLineChart {
   @State canvasWidth: number = 0
   @State canvasHeight: number = 0
   @State canvasColor: Color = Color.White
+  @State lineColor: Color = Color.Red
+
 
   aboutToAppear(): void {
     this.calcData()
@@ -55,7 +57,7 @@ export struct SimpleLineChart {
     Stack() {
       Polyline({ width: this.canvasWidth, height: this.canvasHeight })
         .points(this.pointList)
-        .stroke(Color.Red)
+        .stroke(this.lineColor)
         .fillOpacity(0.0)
         .strokeWidth(1)
         .strokeLineJoin(LineJoinStyle.Round)

@@ -16,6 +16,7 @@ struct HomePage {
         canvasWidth: 100,
         canvasHeight: 100,
         canvasColor: Color.White,
+        lineColor: Color.Red,
         chartDataList: this.chartDataList
       })
 
