@@ -17,7 +17,7 @@ export struct SimpleLineChart {
   @State canvasHeight: number = 0
   @State canvasColor: Color = Color.White
   @State lineColor: Color = Color.Red
-  @State gradientColor: Color = 0x1Aff0000
+  @State gradientColor: Color = 0x02ff0000
 
   aboutToAppear(): void {
     this.calcData()
@@ -65,6 +65,10 @@ export struct SimpleLineChart {
 
   build() {
     Stack() {
+      Polygon({ width: this.canvasWidth, height: this.canvasHeight })
+        .points(this.angleList)
+        .fill(this.canvasColor)
+        .fillOpacity(1)
       Polyline({ width: this.canvasWidth, height: this.canvasHeight })
         .points(this.pointList)
         .stroke(this.lineColor)
@@ -72,12 +76,6 @@ export struct SimpleLineChart {
         .strokeWidth(1)
         .strokeLineJoin(LineJoinStyle.Round)
         .zIndex(1)
-
-      Polygon({ width: this.canvasWidth, height: this.canvasHeight })
-        .points(this.angleList)
-        .fill(this.canvasColor)
-        .fillOpacity(1)
-
     }.linearGradient({
       direction: GradientDirection.Bottom,
       repeating: false,
@@ -86,4 +84,3 @@ export struct SimpleLineChart {
     .backgroundColor(this.canvasColor)
   }
 }
-
