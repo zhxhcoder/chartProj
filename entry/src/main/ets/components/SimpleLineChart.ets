@@ -1,6 +1,6 @@
 @Component
 export struct SimpleLineChart {
-  dataList: string[] =
+  chartDataList: string[] =
     ["0.00", "2.86", "3.58", "-0.25", "0.97", "-0.60", "-1.82", "-4.89", "-1.77", "-10.53", "-10.88", "-16.07",
       "-17.80", "-27.07", "-15.98", "-9.41", "-7.31", "-5.43", "-3.31", "-6.63", "-8.51", "-14.72", "-12.95", "-12.80",
       "-8.46", "-11.88", "-9.26", "-12.81", "-10.95", "-11.71", "-6.08", "-9.12", "-9.79", "-4.13", "-5.62", "-9.66",
@@ -16,7 +16,7 @@ export struct SimpleLineChart {
   }
 
   calcData() {
-    if (this.dataList == null || this.dataList.length <= 1) {
+    if (this.chartDataList == null || this.chartDataList.length <= 1) {
       return
     }
 
@@ -29,7 +29,7 @@ export struct SimpleLineChart {
     let xGap = 0.0
     let yGap = 0.0
 
-    this.dataList.forEach((item) => {
+    this.chartDataList.forEach((item) => {
       if (Number(item) > dataMax) {
         dataMax = Number(item)
       }
@@ -38,18 +38,22 @@ export struct SimpleLineChart {
       }
     })
 
-    xGap = this.canvasWidth / (this.dataList.length - 1)
+    xGap = this.canvasWidth / (this.chartDataList.length - 1)
     yGap = this.canvasHeight / (dataMax - dataMin)
 
     let tempPoints: number[][] = []
-    this.dataList.forEach((item, index) => {
+    this.chartDataList.forEach((item, index) => {
       tempPoints.push([xStart + index * xGap, yStart - (Number(item) - dataMin) * yGap])
     })
     this.pointList = tempPoints
 
-    let tempAngles: number[][] = JSON.parse(JSON.stringify(tempPoints))
+    let tempAngles: number[][] = []
     tempAngles.push([0, this.canvasHeight])
+    tempPoints.forEach((item) => {
+      tempAngles.push(item)
+    })
     tempAngles.push([this.canvasWidth, this.canvasHeight])
+
     this.angleList = tempAngles
     console.log('newArr', JSON.stringify(tempAngles))
   }
