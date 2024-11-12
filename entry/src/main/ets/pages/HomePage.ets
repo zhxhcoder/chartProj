@@ -18,7 +18,7 @@ struct HomePage {
   build() {
     Column() {
       SimpleLineChart({
-        canvasWidth: 100,
+        canvasWidth: 200,
         canvasHeight: 100,
         canvasColor: Color.White,
         lineColor: Color.Red,
@@ -26,13 +26,20 @@ struct HomePage {
       })
 
       SimpleLineChart({
-        canvasWidth: 100,
-        canvasHeight: 100,
+        canvasWidth: 300,
+        canvasHeight: 200,
         canvasColor: Color.White,
         lineColor: Color.Red,
         chartDataList: this.chartDataList2
       }).margin({ top: 5 })
 
+      SimpleLineChart({
+        canvasWidth: 52,
+        canvasHeight: 46,
+        canvasColor: Color.White,
+        lineColor: Color.Red,
+        chartDataList: this.chartDataList2
+      }).margin({ top: 5 })
 
       Polygon({ width: 100, height: 100 })
         .points([[0, 0],
