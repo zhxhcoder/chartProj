@@ -7,7 +7,7 @@ export struct SimpleLineChart {
   @State canvasHeight: number = 0
   @State canvasColor: Color = Color.White
   @State lineColor: Color = Color.Red
-
+  @State gradientColor: Color = 0x1Aff0000
 
   aboutToAppear(): void {
     this.calcData()
@@ -71,7 +71,7 @@ export struct SimpleLineChart {
     }.linearGradient({
       direction: GradientDirection.Bottom,
       repeating: false,
-      colors: [[0x1Aff0000, 0.0], [this.canvasColor, 1.0]]
+      colors: [[this.gradientColor, 0.0], [this.canvasColor, 1.0]]
     })
     .backgroundColor(this.canvasColor)
   }
