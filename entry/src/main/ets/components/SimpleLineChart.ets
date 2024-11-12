@@ -5,6 +5,7 @@ export struct SimpleLineChart {
   @State angleList: number[][] = []
   @State canvasWidth: number = 0
   @State canvasHeight: number = 0
+  @State canvasColor: Color = Color.White
 
   aboutToAppear(): void {
     this.calcData()
@@ -40,11 +41,11 @@ export struct SimpleLineChart {
     this.pointList = tempPoints
 
     let tempAngles: number[][] = []
-    tempAngles.push([0, this.canvasHeight])
+    tempAngles.push([0, 0])
     tempPoints.forEach((item) => {
       tempAngles.push(item)
     })
-    tempAngles.push([this.canvasWidth, this.canvasHeight])
+    tempAngles.push([this.canvasWidth, 0])
 
     this.angleList = tempAngles
     console.log('newArr', JSON.stringify(tempAngles))
@@ -62,9 +63,15 @@ export struct SimpleLineChart {
 
       Polygon({ width: this.canvasWidth, height: this.canvasHeight })
         .points(this.angleList)
-        .fill(Color.Red)
-        .fillOpacity(0.06)
-    }
+        .fill(this.canvasColor)
+        .fillOpacity(1)
+
+    }.linearGradient({
+      direction: GradientDirection.Bottom,
+      repeating: false,
+      colors: [[Color.Red, 0.0], [this.canvasColor, 1.0]]
+    })
+    .backgroundColor(this.canvasColor)
   }
 }
 
