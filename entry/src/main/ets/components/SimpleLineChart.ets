@@ -1,3 +1,13 @@
+/*
+共用的简单折线图
+      SimpleLineChart({
+        canvasWidth: 52,
+        canvasHeight: 45,
+        canvasColor: Color.White,
+        lineColor: Color.Red,
+        chartDataList: this.chartDataList
+      })
+ */
 @Component
 export struct SimpleLineChart {
   @State chartDataList: string[] = []
