@@ -1,4 +1,4 @@
-import { FinancingLineChart } from '../components/FinancingLineChart';
+import { SimpleLineChart } from '../components/SimpleLineChart';
 
 @Entry
 @Component

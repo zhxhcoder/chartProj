@@ -1,5 +1,5 @@
 @Component
-export struct FinancingLineChart {
+export struct SimpleLineChart {
   @State message: string = 'Hello World';
   lineList: string[] =
     ["0.00", "0.07", "0.12", "0.12", "0.15", "0.19", "0.25", "0.32", "0.43", "0.51", "0.57", "0.62", "0.69", "0.74",
@@ -12,7 +12,6 @@ export struct FinancingLineChart {
   @State canvasHeight: number = 100
 
   aboutToAppear(): void {
-    console.log('line的宽高：', this.canvasWidth, this.canvasHeight)
     let list: number[][] = []
     this.lineList.forEach((item, index) => {
       list.push(
@@ -31,7 +30,7 @@ export struct FinancingLineChart {
     Stack() {
       Polyline({ width: this.canvasWidth, height: this.canvasHeight })
         .points(this.formatterLineList)
-        .stroke(Color.Red)// .fill(Color.Red)
+        .stroke(Color.Red)
         .fillOpacity(0.0)
         .strokeWidth(1)
         .strokeLineJoin(LineJoinStyle.Round)
@@ -39,18 +38,9 @@ export struct FinancingLineChart {
 
       Polygon({ width: this.canvasWidth, height: this.canvasHeight })
         .points(this.fillList)
-        .fillOpacity(0)
         .stroke(Color.White)
         .fill(Color.Red)
         .fillOpacity(0.1)
-        .strokeWidth(1)
-        .strokeLineJoin(LineJoinStyle.Round)
     }
-    .width(100)
-    .height(100)
-    .backgroundColor(Color.White)
-    .margin({
-      bottom: 20
-    })
   }
 }
