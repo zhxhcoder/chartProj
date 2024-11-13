@@ -19,15 +19,19 @@ struct HomePage {
   build() {
     Scroll() {
       Column() {
-        UpDownText({
-          rate: '+156%'
-        })
-        UpDownText({
-          rate: '-156%'
-        })
-        UpDownText({
-          rate: '-156'
-        })
+
+        Row() {
+          UpDownText({
+            rate: '+156%'
+          })
+          UpDownText({
+            rate: '-156%'
+          })
+          UpDownText({
+            rate: '-156'
+          })
+        }
+
         SimpleLineChart({
           canvasWidth: 200,
           canvasHeight: 100,

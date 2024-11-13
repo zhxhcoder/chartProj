@@ -10,7 +10,7 @@ export struct UpDownText {
 
   build() {
     Row() {
-      Text(this.rate.replace('%', ''))
+      Text(this.rate.substring(0, this.rate.length))
         .fontSize(this.bigSize)
         .fontColor(UpDownText.getRateColor(this.rate))
 
