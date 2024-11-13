@@ -1,5 +1,5 @@
-import { SimpleLineChart } from '../components/SimpleLineChart';
-import { UpDownText } from '../components/UpDownText';
+import { SimpleLineChart } from '../widget/SimpleLineChart';
+import { UpDownText } from '../widget/UpDownText';
 
 @Entry
 @Component
