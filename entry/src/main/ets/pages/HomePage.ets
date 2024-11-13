@@ -22,6 +22,16 @@ struct HomePage {
   build() {
     Scroll() {
       Column() {
+        Text("2年·VIP会员 3个月期·8GB·230mm·商品颜色")
+          .width(200)// 设置最大行数
+          .maxLines(1)// 文本超长显示
+          .textOverflow({ overflow: TextOverflow.Ellipsis })// 文本超长显示省略号
+          .ellipsisMode(EllipsisMode.END)// 设置断行规则WordBreak.BREAK_ALL后实现字母为单位进行截断
+          .wordBreak(WordBreak.BREAK_ALL)
+          .textAlign(TextAlign.JUSTIFY)
+          .backgroundColor(Color.Green)
+          .fontSize(16)
+          .margin({ top: 5 })
 
         Row() {
           UpDownText({
@@ -39,7 +49,7 @@ struct HomePage {
           UpDownText({
             rate: '-356'
           })
-        }
+        }.margin({ top: 5 })
 
         SimpleLineChart({
           canvasWidth: 200,
@@ -47,7 +57,7 @@ struct HomePage {
           canvasColor: Color.White,
           lineColor: Color.Red,
           chartDataList: this.chartDataList1
-        })
+        }).margin({ top: 5 })
 
         SimpleLineChart({
           canvasWidth: 300,
