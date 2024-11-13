@@ -16,19 +16,28 @@ struct HomePage {
       "1.55", "1.57", "1.60", "1.66", "1.68", "1.72", "1.75", "1.81", "1.86", "1.81", "1.83", "1.77", "1.85", "1.87",
       "1.89", "1.89", "1.68", "1.90", "1.89", "1.91", "1.98"]
 
+  aboutToAppear(): void {
+  }
+
   build() {
     Scroll() {
       Column() {
 
         Row() {
           UpDownText({
+            rate: '%888%'
+          })
+          UpDownText({
+            rate: ""
+          })
+          UpDownText({
             rate: '+156%'
           })
           UpDownText({
-            rate: '-156%'
+            rate: '-256%'
           })
           UpDownText({
-            rate: '-156'
+            rate: '-356'
           })
         }
 

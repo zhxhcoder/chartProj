@@ -1,6 +1,6 @@
 @Component
 export struct UpDownText {
-  @State rate: string = '';
+  @State rate?: string = '';
   @State bigSize: number = 19;
   @State smallSize: number = 13;
 
@@ -10,9 +10,11 @@ export struct UpDownText {
 
   build() {
     Row() {
-      Text(this.rate.substring(0, this.rate.length))
-        .fontSize(this.bigSize)
-        .fontColor(UpDownText.getRateColor(this.rate))
+      if (this.rate != null) {
+        Text(this.rate.substring(0, this.rate.endsWith('%') ? this.rate.length - 1 : this.rate.length))
+          .fontSize(this.bigSize)
+          .fontColor(UpDownText.getRateColor(this.rate))
+      }
 
       if (this.rate != null && this.rate.endsWith('%')) {
         Text('%')
