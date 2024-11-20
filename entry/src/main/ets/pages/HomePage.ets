@@ -116,8 +116,7 @@ struct HomePage {
 
           }.height(1200)
 
-        }.width('100%').id("scroll").margin({ bottom: 90 })
-
+        }.width('100%').id("scroll").margin({ bottom: 102 })
 
         Column() {
 
@@ -133,10 +132,13 @@ struct HomePage {
             Text("0.080%")
               .fontSize(12)
               .fontColor('#FFF93A23')
+              .margin({ left: 3 })
 
             Text("10元起购")
               .fontSize(12)
               .fontColor('#FF626C7A')
+              .margin({ left: 3 })
+
           }
           .height(28)
           .backgroundColor(Color.White)
