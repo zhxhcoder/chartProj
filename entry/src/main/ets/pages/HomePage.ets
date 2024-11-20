@@ -22,6 +22,30 @@ struct HomePage {
   build() {
     Scroll() {
       Column() {
+        Row() {
+          Text("item.labelName")
+            .fontSize(13)
+            .fontColor(Color.Red)
+            .padding({
+              left: 4,
+              right: 4,
+              top: 2,
+              bottom: 2
+            })
+            .borderRadius(3)
+            .borderColor(Color.Red)
+            .borderWidth(1)
+            .textAlign(TextAlign.Center)
+
+          Text("item.title")
+            .fontSize(16)
+            .fontColor(Color.Black)
+            .height(30)
+            .margin({ left: 15 })
+
+        }.alignItems(VerticalAlign.Center)
+        .layoutWeight(1)
+
         Text("2年·VIP会员 3个月期·8GB·230mm·商品颜色")
           .width(200)// 设置最大行数
           .maxLines(1)// 文本超长显示
