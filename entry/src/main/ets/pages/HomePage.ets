@@ -21,12 +21,28 @@ struct HomePage {
 
   build() {
     Column() {
-      Text("top.title")
-        .fontSize(16)
-        .fontColor(Color.White)
-        .height(60)
-        .width('100%')
-        .backgroundColor(Color.Brown)
+      RelativeContainer() {
+        Text('左边')
+          .fontSize(18)
+          .fontColor(Color.White)
+          .fontWeight(FontWeight.Bold)
+          .alignRules({
+            center: { anchor: "__container__", align: VerticalAlign.Center },
+            left: { anchor: "__container__", align: HorizontalAlign.Start }
+          })
+
+        Text('基金详情')
+          .fontSize(18)
+          .fontColor(Color.White)
+          .fontWeight(FontWeight.Bold)
+          .alignRules({
+            center: { anchor: "__container__", align: VerticalAlign.Center },
+            middle: { anchor: "__container__", align: HorizontalAlign.Center },
+          })
+      }
+      .width('100%')
+      .height(56)
+      .backgroundColor(Color.Blue)
 
       RelativeContainer() {
 
