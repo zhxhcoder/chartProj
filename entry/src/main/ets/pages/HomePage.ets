@@ -154,7 +154,7 @@ struct HomePage {
             }.alignItems(HorizontalAlign.Center).width(56)
 
             Column() {
-              Image($r('app.media.icon_fund_add'))
+              Image($r('app.media.icon_fund_pk'))
                 .width(20)
                 .height(20)
 
@@ -164,14 +164,21 @@ struct HomePage {
             }.alignItems(HorizontalAlign.Center).width(56)
 
             Row() {
-
               Text("定投")
                 .fontSize(16)
                 .fontColor('#FFF93A23')
+                .height('100%')
+                .backgroundColor('#14F93A23')
+                .layoutWeight(0.5)
+                .textAlign(TextAlign.Center)
 
               Text("购买")
                 .fontSize(16)
-                .fontColor('#FFF93A23')
+                .height('100%')
+                .fontColor(Color.White)
+                .backgroundColor('#FFF93A23')
+                .layoutWeight(0.5)
+                .textAlign(TextAlign.Center)
 
             }.layoutWeight(1)
 
