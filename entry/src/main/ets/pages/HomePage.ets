@@ -29,7 +29,8 @@ struct HomePage {
           .alignRules({
             center: { anchor: "__container__", align: VerticalAlign.Center },
             left: { anchor: "__container__", align: HorizontalAlign.Start }
-          })
+          }).margin({ left: 12 })
+
 
         Text('基金详情')
           .fontSize(18)
