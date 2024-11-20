@@ -29,7 +29,8 @@ struct HomePage {
           .alignRules({
             center: { anchor: "__container__", align: VerticalAlign.Center },
             left: { anchor: "__container__", align: HorizontalAlign.Start }
-          }).margin({ left: 12 })
+          })
+          .margin({ left: 12 })
 
 
         Text('基金详情')
@@ -88,15 +89,8 @@ struct HomePage {
               UpDownText({
                 rate: '%888%'
               })
-
               UpDownText({
                 rate: '+156%'
-              })
-              UpDownText({
-                rate: '-256%'
-              })
-              UpDownText({
-                rate: '-356'
               })
             }.margin({ top: 5 })
 
@@ -124,16 +118,69 @@ struct HomePage {
 
         }.width('100%').id("scroll").margin({ bottom: 90 })
 
-        Text("bottom.bottom")
-          .fontSize(16)
-          .fontColor(Color.White)
-          .height(60)
-          .width('100%')
-          .backgroundColor(Color.Brown)
-          .alignRules({
-            bottom: { anchor: "__container__", align: VerticalAlign.Bottom },
-          })
-          .margin({ bottom: 30 })
+
+        Column() {
+
+          Row() {
+            Text("购买费率:")
+              .fontSize(12)
+              .fontColor('#FF626C7A')
+
+            Text("0.80%")
+              .fontSize(12)
+              .fontColor('#FF626C7A')
+
+            Text("0.080%")
+              .fontSize(12)
+              .fontColor('#FFF93A23')
+
+            Text("10元起购")
+              .fontSize(12)
+              .fontColor('#FF626C7A')
+          }
+          .height(28)
+          .backgroundColor(Color.White)
+          .alignItems(VerticalAlign.Center)
+
+          Row() {
+            Column() {
+              Image($r('app.media.icon_fund_add'))
+                .width(20)
+                .height(20)
+
+              Text("加自选")
+                .fontSize(12)
+                .fontColor('#FF626C7A')
+            }.alignItems(HorizontalAlign.Center).width(56)
+
+            Column() {
+              Image($r('app.media.icon_fund_add'))
+                .width(20)
+                .height(20)
+
+              Text("对比")
+                .fontSize(12)
+                .fontColor('#FF626C7A')
+            }.alignItems(HorizontalAlign.Center).width(56)
+
+            Row() {
+
+              Text("定投")
+                .fontSize(16)
+                .fontColor('#FFF93A23')
+
+              Text("购买")
+                .fontSize(16)
+                .fontColor('#FFF93A23')
+
+            }.layoutWeight(1)
+
+          }.height(44).width('100%').backgroundColor(Color.White)
+
+        }.alignRules({
+          bottom: { anchor: "__container__", align: VerticalAlign.Bottom },
+        })
+        .margin({ bottom: 30 })
 
       }.width('100%')
 
