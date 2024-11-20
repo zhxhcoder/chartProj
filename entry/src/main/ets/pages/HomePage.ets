@@ -20,80 +20,97 @@ struct HomePage {
   }
 
   build() {
-    Scroll() {
-      Column() {
-        Row() {
-          Text("item.labelName")
-            .fontSize(13)
-            .fontColor(Color.Red)
-            .padding({
-              left: 4,
-              right: 4,
-              top: 2,
-              bottom: 2
-            })
-            .borderRadius(3)
-            .borderColor(Color.Red)
-            .borderWidth(1)
-            .textAlign(TextAlign.Center)
+    Column() {
+      Text("top.title")
+        .fontSize(16)
+        .fontColor(Color.White)
+        .height(60)
+        .width('100%')
+        .backgroundColor(Color.Brown)
 
-          Text("item.title")
+      Scroll() {
+        Column() {
+          Row() {
+            Text("item.labelName")
+              .fontSize(13)
+              .fontColor(Color.Red)
+              .padding({
+                left: 4,
+                right: 4,
+                top: 2,
+                bottom: 2
+              })
+              .borderRadius(3)
+              .borderColor(Color.Red)
+              .borderWidth(1)
+              .textAlign(TextAlign.Center)
+
+            Text("item.title")
+              .fontSize(16)
+              .fontColor(Color.Black)
+              .height(30)
+              .margin({ left: 15 })
+
+          }.alignItems(VerticalAlign.Center)
+          .layoutWeight(1)
+
+          Text("2年·VIP会员 3个月期·8GB·230mm·商品颜色")
+            .width(200)// 设置最大行数
+            .maxLines(1)// 文本超长显示
+            .textOverflow({ overflow: TextOverflow.Ellipsis })// 文本超长显示省略号
+            .ellipsisMode(EllipsisMode.END)// 设置断行规则WordBreak.BREAK_ALL后实现字母为单位进行截断
+            .wordBreak(WordBreak.BREAK_ALL)
+            .textAlign(TextAlign.JUSTIFY)
+            .backgroundColor(Color.Green)
             .fontSize(16)
-            .fontColor(Color.Black)
-            .height(30)
-            .margin({ left: 15 })
+            .margin({ top: 5 })
 
-        }.alignItems(VerticalAlign.Center)
-        .layoutWeight(1)
+          Row() {
+            UpDownText({
+              rate: '%888%'
+            })
+            UpDownText({
+              rate: ""
+            })
+            UpDownText({
+              rate: '+156%'
+            })
+            UpDownText({
+              rate: '-256%'
+            })
+            UpDownText({
+              rate: '-356'
+            })
+          }.margin({ top: 5 })
 
-        Text("2年·VIP会员 3个月期·8GB·230mm·商品颜色")
-          .width(200)// 设置最大行数
-          .maxLines(1)// 文本超长显示
-          .textOverflow({ overflow: TextOverflow.Ellipsis })// 文本超长显示省略号
-          .ellipsisMode(EllipsisMode.END)// 设置断行规则WordBreak.BREAK_ALL后实现字母为单位进行截断
-          .wordBreak(WordBreak.BREAK_ALL)
-          .textAlign(TextAlign.JUSTIFY)
-          .backgroundColor(Color.Green)
-          .fontSize(16)
-          .margin({ top: 5 })
+          SimpleLineChart({
+            canvasWidth: 200,
+            canvasHeight: 100,
+            canvasColor: Color.White,
+            lineColor: Color.Red,
+            chartDataList: this.chartDataList1
+          }).margin({ top: 5 })
 
-        Row() {
-          UpDownText({
-            rate: '%888%'
-          })
-          UpDownText({
-            rate: ""
-          })
-          UpDownText({
-            rate: '+156%'
-          })
-          UpDownText({
-            rate: '-256%'
-          })
-          UpDownText({
-            rate: '-356'
-          })
-        }.margin({ top: 5 })
+          SimpleLineChart({
+            canvasWidth: 300,
+            canvasHeight: 200,
+            canvasColor: Color.White,
+            lineColor: Color.Red,
+            chartDataList: this.chartDataList2
+          }).margin({ top: 5 })
+        }.height(1000)
 
-        SimpleLineChart({
-          canvasWidth: 200,
-          canvasHeight: 100,
-          canvasColor: Color.White,
-          lineColor: Color.Red,
-          chartDataList: this.chartDataList1
-        }).margin({ top: 5 })
+      }.width('100%')
 
-        SimpleLineChart({
-          canvasWidth: 300,
-          canvasHeight: 200,
-          canvasColor: Color.White,
-          lineColor: Color.Red,
-          chartDataList: this.chartDataList2
-        }).margin({ top: 5 })
 
-      }
-    }
-    .height('100%')
-    .width('100%')
+      Text("bottom.title")
+        .fontSize(16)
+        .fontColor(Color.White)
+        .height(60)
+        .width('100%')
+        .backgroundColor(Color.Brown)
+        .margin({ left: 15 })
+    }.justifyContent(FlexAlign.SpaceBetween)
+
   }
 }
