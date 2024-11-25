@@ -205,8 +205,8 @@ struct HomePage {
             }).margin({ top: 5 })
 
             UpDownText({
-              rate: "--------------"
-            }).margin({ top: 300 })
+              rate: "---------------------"
+            }).margin({ top: 360 })
 
           }.width('100%')
 
