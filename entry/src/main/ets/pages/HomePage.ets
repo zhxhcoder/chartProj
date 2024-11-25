@@ -18,6 +18,9 @@ struct HomePage {
       "1.89", "1.89", "1.68", "1.90", "1.89", "1.91", "1.98"]
   controller: webview.WebviewController = new webview.WebviewController();
 
+
+  scroller: Scroller = new Scroller()
+
   aboutToAppear(): void {
   }
 
@@ -128,7 +131,7 @@ struct HomePage {
           bottom: { anchor: "__container__", align: VerticalAlign.Bottom },
         }).id('bottomBar')
 
-        Scroll() {
+        Scroll(this.scroller) {
           Column() {
             Row() {
               Text("item.labelName")
