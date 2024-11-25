@@ -17,11 +17,22 @@ struct HomePage {
       "1.55", "1.57", "1.60", "1.66", "1.68", "1.72", "1.75", "1.81", "1.86", "1.81", "1.83", "1.77", "1.85", "1.87",
       "1.89", "1.89", "1.68", "1.90", "1.89", "1.91", "1.98"]
   controller: webview.WebviewController = new webview.WebviewController();
-
-
   scroller: Scroller = new Scroller()
+  scrollY: number = 0;
 
   aboutToAppear(): void {
+  }
+
+  /**
+   * 滚动事件
+   * @param x
+   * @param y
+   */
+  handleScroll() {
+    this.scrollY = this.scroller.currentOffset().yOffset
+
+    console.log('【handleScroll】--> ', this.scrollY)
+
   }
 
   build() {
@@ -202,6 +213,9 @@ struct HomePage {
         }.width('100%').id('scroll').alignRules({
           bottom: { anchor: "bottomBar", align: VerticalAlign.Top },
           top: { anchor: "topBar", align: VerticalAlign.Bottom },
+        })
+        .onDidScroll(() => {
+          this.handleScroll()
         })
       }
       .width('100%')
