@@ -214,14 +214,54 @@ struct HomePage {
             }.width('50%')
 
             Swiper() {
-              Text("滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
-                .fontSize(16)
-                .width('100%')
-                .height('100%')
-                .fontColor(Color.White)
-                .backgroundColor('#FFF93A23')
-                .layoutWeight(0.5)
-                .textAlign(TextAlign.Center)
+              Row() {
+                Text("滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
+                  .fontSize(16)
+                  .fontColor(Color.White)
+                  .backgroundColor('#FFF93A23')
+                  .layoutWeight(0.5)
+                  .margin({ left: 20 })
+                  .textAlign(TextAlign.Center)
+
+                Text("滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
+                  .fontSize(16)
+                  .fontColor(Color.White)
+                  .backgroundColor('#FFF93A23')
+                  .layoutWeight(0.5)
+                  .margin({ left: 20 })
+                  .textAlign(TextAlign.Center)
+                Text("滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
+                  .fontSize(16)
+                  .fontColor(Color.White)
+                  .backgroundColor('#FFF93A23')
+                  .layoutWeight(0.5)
+                  .margin({ left: 20 })
+                  .textAlign(TextAlign.Center)
+                Text("滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
+                  .fontSize(16)
+                  .fontColor(Color.White)
+                  .backgroundColor('#FFF93A23')
+                  .layoutWeight(0.5)
+                  .margin({ left: 20 })
+                  .textAlign(TextAlign.Center)
+                Text("滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
+                  .fontSize(16)
+                  .fontColor(Color.White)
+                  .backgroundColor('#FFF93A23')
+                  .layoutWeight(0.5)
+                  .margin({ left: 20 })
+                  .textAlign(TextAlign.Center)
+                Text("滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
+                  .fontSize(16)
+                  .fontColor(Color.White)
+                  .backgroundColor('#FFF93A23')
+                  .layoutWeight(0.5)
+                  .margin({ left: 20 })
+                  .textAlign(TextAlign.Center)
+
+
+              }
+
             }
           }
 
