@@ -213,56 +213,54 @@ struct HomePage {
 
             }.width('50%')
 
-            Swiper() {
+            Scroll() {
               Row() {
-                Text("滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
+                Text("1滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
                   .fontSize(16)
                   .fontColor(Color.White)
                   .backgroundColor('#FFF93A23')
-                  .layoutWeight(0.5)
+                  .width(100)
                   .margin({ left: 20 })
                   .textAlign(TextAlign.Center)
 
-                Text("滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
+                Text("2滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
                   .fontSize(16)
                   .fontColor(Color.White)
                   .backgroundColor('#FFF93A23')
-                  .layoutWeight(0.5)
+                  .width(100)
                   .margin({ left: 20 })
                   .textAlign(TextAlign.Center)
-                Text("滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
+                Text("3滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
                   .fontSize(16)
                   .fontColor(Color.White)
                   .backgroundColor('#FFF93A23')
-                  .layoutWeight(0.5)
+                  .width(100)
                   .margin({ left: 20 })
                   .textAlign(TextAlign.Center)
-                Text("滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
+                Text("4滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
                   .fontSize(16)
                   .fontColor(Color.White)
                   .backgroundColor('#FFF93A23')
-                  .layoutWeight(0.5)
+                  .width(100)
                   .margin({ left: 20 })
                   .textAlign(TextAlign.Center)
-                Text("滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
+                Text("5滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
                   .fontSize(16)
                   .fontColor(Color.White)
                   .backgroundColor('#FFF93A23')
-                  .layoutWeight(0.5)
+                  .width(100)
                   .margin({ left: 20 })
                   .textAlign(TextAlign.Center)
-                Text("滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
+                Text("6滑动滑动滑动滑动滑动滑动滑动滑动滑动滑动")
                   .fontSize(16)
                   .fontColor(Color.White)
                   .backgroundColor('#FFF93A23')
-                  .layoutWeight(0.5)
+                  .width(100)
                   .margin({ left: 20 })
                   .textAlign(TextAlign.Center)
-
-
               }
-
-            }
+            }.scrollable(ScrollDirection.Horizontal) // 滚动方向
+            .scrollBar(BarState.Off) // 滚动条常驻显示
           }
 
         }.width('100%').id('scroll').alignRules({
